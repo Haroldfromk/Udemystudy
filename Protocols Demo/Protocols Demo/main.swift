@@ -105,5 +105,5 @@ myEagle.fly()
 let myPenguin = Penguin()
 let myPlane = Airplane()
 let museum = FlyingMuseum()
-museum.flyingDemo(flyingObject: myEagle)
+
 
