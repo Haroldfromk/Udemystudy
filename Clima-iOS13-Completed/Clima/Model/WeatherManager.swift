@@ -2,56 +2,47 @@
 //  WeatherManager.swift
 //  Clima
 //
-//  Created by Dongik Song on 3/6/24.
-//  Copyright © 2024 App Brewery. All rights reserved.
+//  Created by Angela Yu on 03/09/2019.
+//  Copyright © 2019 App Brewery. All rights reserved.
 //
 
 import Foundation
 import CoreLocation
 
-// MARK: - Protocol 생성.
-
-protocol WeatherManagerDelegate{
-    func didUpdateWeather(_ weatherManager:WeatherManager, weather : WeatherModel)
-    func didFailWithError (error: Error)
+protocol WeatherManagerDelegate {
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel)
+    func didFailWithError(error: Error)
 }
 
 struct WeatherManager {
+    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=e72ca729af228beabd5d20e3b7749713&units=metric"
     
-// MARK: - URL 기본 주소
-    let weatherURL = "https://api.openweathermap.org/data/2.5/weather?appid=b5005bab606b11d2b82b3dae1b2bc221&units=metric"
-
+    var delegate: WeatherManagerDelegate?
     
-    var delegate : WeatherManagerDelegate?
-    
-    
-    func fetchWeather (cityName : String) {
+    func fetchWeather(cityName: String) {
         let urlString = "\(weatherURL)&q=\(cityName)"
         performRequest(with: urlString)
     }
     
-    func fetchWeather (latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
-            let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
-            performRequest(with: urlString)
-        }
+    func fetchWeather(latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        let urlString = "\(weatherURL)&lat=\(latitude)&lon=\(longitude)"
+        performRequest(with: urlString)
+    }
     
-    func performRequest(with urlString : String){
+    func performRequest(with urlString: String) {
         if let url = URL(string: urlString) {
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { (data, response, error) in
-                if error != nil { // 에러가 발생하면 출력 여기서는 네트워크 에러 쪽이라고 보면 된다.
+                if error != nil {
                     self.delegate?.didFailWithError(error: error!)
-                    return // 여기선 return을 사용하면 함수를 빠져나가 아무것도 하지말라는 것이다
+                    return
                 }
-                
                 if let safeData = data {
                     if let weather = self.parseJSON(safeData) {
                         self.delegate?.didUpdateWeather(self, weather: weather)
-                         
                     }
                 }
             }
-            
             task.resume()
         }
     }
@@ -67,16 +58,14 @@ struct WeatherManager {
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             return weather
             
-            print(weather.temperatureString)
-        } catch { // JSON Decoder Fail
+        } catch {
             delegate?.didFailWithError(error: error)
             return nil
         }
-        
     }
     
     
+    
 }
-
 
 
