@@ -67,7 +67,7 @@ struct WeatherManager {
             let weather = WeatherModel(conditionId: id, cityName: name, temperature: temp)
             return weather
             
-            print(weather.temperatureString)
+           // print(weather.temperatureString)
         } catch { // JSON Decoder Fail
             delegate?.didFailWithError(error: error)
             return nil
