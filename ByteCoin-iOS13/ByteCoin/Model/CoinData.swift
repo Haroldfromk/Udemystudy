@@ -1,14 +1,7 @@
-//
-//  CoinData.swift
-//  ByteCoin
-//
-//  Created by Dongik Song on 3/13/24.
-//  Copyright © 2024 The App Brewery. All rights reserved.
-//
 
 import Foundation
 
-struct CoinData : Decodable {
+struct CoinData : Codable { // 실제로 api로부터 가져오는 데이터
     
     let asset_id_base : String
     let asset_id_quote : String
