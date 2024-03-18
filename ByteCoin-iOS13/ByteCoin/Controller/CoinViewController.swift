@@ -28,6 +28,7 @@ class CoinViewController: UIViewController {
 }
 
 extension CoinViewController : CoinProtocol {
+    
     func didUpdateCoin(coinManager: CoinManager, coin: CoinModel) {
         DispatchQueue.main.async {
             self.bitCoinLabel.text = coin.stringRate

@@ -19,13 +19,17 @@ struct CoinManager {
     
     
     func fetchCoin () {
+        
         let urlString = "\(baseURL)apikey=\(storage.apiKey)"
         performRequest(with: urlString)
+        
     }
     
     func fetchCoin (currecy: String) {
+        
         let urlString = "\(baseURL)\(currecy)?apikey=\(storage.apiKey)"
         performRequest(with: urlString)
+        
     }
     
     func getCoinPrice(for currency: String) {
@@ -62,8 +66,11 @@ struct CoinManager {
     }
     
     func parseJSON(_ coinData : Data) -> CoinModel? {
+        
         let decoder = JSONDecoder()
+        
         do {
+            
             let decodedData = try
             decoder.decode(CoinData.self, from: coinData)
             let asset_id_base = decodedData.asset_id_base
