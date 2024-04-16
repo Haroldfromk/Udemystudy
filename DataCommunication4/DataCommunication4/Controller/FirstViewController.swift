@@ -5,7 +5,7 @@ import UIKit
 class FirstViewController: UIViewController {
 
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField! //asdf
     
     
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class FirstViewController: UIViewController {
         if segue.identifier == "goToVC" {
             let secondVC = segue.destination as? SecondViewController
             if let text = textField.text {
-                secondVC?.message = text
+                secondVC?.message = text //asdf
             }
         }
     }
