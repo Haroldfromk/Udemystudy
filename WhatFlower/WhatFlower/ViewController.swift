@@ -13,7 +13,7 @@ import SwiftyJSON
 import SDWebImage
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var label: UILabel!
@@ -28,25 +28,25 @@ class ViewController: UIViewController {
         imagePicker.allowsEditing = true
         
     }
-
+    
     @IBAction func cameraTapped(_ sender: UIBarButtonItem) {
         present(imagePicker, animated: true)
-
+        
     }
     
     func requestInfo(flowerName: String) {
-
-          let parameters : [String:String] = [
-          "format" : "json",
-          "action" : "query",
-          "prop" : "extracts|pageimages",
-          "exintro" : "",
-          "explaintext" : "",
-          "titles" : flowerName,
-          "indexpageids" : "",
-          "redirects" : "1",
-          "pithumbsize" : "500"
-          ]
+        
+        let parameters : [String:String] = [
+            "format" : "json",
+            "action" : "query",
+            "prop" : "extracts|pageimages",
+            "exintro" : "",
+            "explaintext" : "",
+            "titles" : flowerName,
+            "indexpageids" : "",
+            "redirects" : "1",
+            "pithumbsize" : "500"
+        ]
         
         Alamofire.request(wikipediaURl, method: .get, parameters: parameters).responseJSON { (response) in
             if response.result.isSuccess {
@@ -72,26 +72,23 @@ class ViewController: UIViewController {
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            
+        
         if let userPickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             
             
             guard let ciImage = CIImage(image: userPickedImage) else {
-                    fatalError("Cannot convert to CIImage")
+                fatalError("Cannot convert to CIImage")
             }
             
             detect(image: ciImage)
-            
             //imageView.image = userPickedImage
-            
-            
         }
         
         imagePicker.dismiss(animated: true)
     }
     
     func detect (image: CIImage) {
-            
+        
         guard let coremlModel = try? VNCoreMLModel(for: FlowerClassifier().model) else {
             fatalError("Import model failed")
         }
