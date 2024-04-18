@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         
     }
@@ -58,13 +58,16 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 fatalError("Model Failed to process Image")
             }
             
-            if let firstResult = results.first {
-                if firstResult.identifier.contains("hotdog") {
-                    self.navigationItem.title = "Hotdog!!"
-                } else {
-                    self.navigationItem.title = "Not Hotdog!!"
-                }
-            }
+            print(results)
+            //self.navigationItem.title = results.first?.identifier
+            
+//            if let firstResult = results.first {
+//                if firstResult.identifier.contains("hotdog") {
+//                    self.navigationItem.title = "Hotdog!!"
+//                } else {
+//                    self.navigationItem.title = "Not Hotdog!!"
+//                }
+//            }
         }
         
         let handler = VNImageRequestHandler(ciImage: image)
