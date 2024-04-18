@@ -122,3 +122,6 @@ iOSInjectionProject/
 
 # for api
 Storage.swift
+
+# mlmodel
+*.mlmodel
