@@ -14,6 +14,7 @@ class CustomImageView: UIImageView {
         
         contentMode = .scaleAspectFit
         layer.cornerRadius = cornerRadius
+        clipsToBounds = true
         
         if let image = image {
             self.image = image

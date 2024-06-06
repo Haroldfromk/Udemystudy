@@ -11,20 +11,22 @@ class ChatViewController: UICollectionViewController {
     
     // MARK: - Properties
     private let reuseIdentifier = "ChatCollectionViewCell"
-    private var messages: [String] = [
-        "Here's sample data",
-        "this the second line with more than one line",
-        "Just wanna add more text for testing or where ever, and thats it for this lessson, Cool"
-    ]
+    private var messages: [Message] = []
     
     private lazy var customInputView: CustomInputView = {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let iv = CustomInputView(frame: frame)
+        iv.delegate = self
         return iv
     }()
     
+    private var currentUser: User
+    private var otherUser: User
+    
     // MARK: - Lifecycle
-    init() {
+    init(currentUser: User, otherUser: User) {
+        self.currentUser = currentUser
+        self.otherUser = otherUser
         super.init(collectionViewLayout: UICollectionViewFlowLayout())
     }
     
@@ -36,6 +38,7 @@ class ChatViewController: UICollectionViewController {
         super.viewDidLoad()
         
         configureUI()
+        fetchMessages()
     }
     
     override var inputAccessoryView: UIView? {
@@ -48,10 +51,20 @@ class ChatViewController: UICollectionViewController {
     
     // MARK: - Helpers
     private func configureUI() {
+        title = otherUser.fullname
+        
         collectionView.backgroundColor = .white
         
         collectionView.register(ChatCollectionViewCell.self
                                 , forCellWithReuseIdentifier: reuseIdentifier)
+    }
+    
+    private func fetchMessages() {
+        MessageServices.fetchMessages(otherUser: otherUser) { messages in
+            self.messages = messages
+            print(messages)
+            self.collectionView.reloadData()
+        }
     }
 }
 
@@ -66,9 +79,8 @@ extension ChatViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ChatCollectionViewCell
         
-        let text = messages[indexPath.row]
-        
-        cell.configure(text: text)
+        let message = messages[indexPath.row]
+        cell.viewModel = MessageViewModel(message: message)
         
         return cell
     }
@@ -87,8 +99,8 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
         let cell = ChatCollectionViewCell(frame: frame)
         
-        let text = messages[indexPath.row]
-        cell.configure(text: text)
+        let message = messages[indexPath.row]
+        cell.viewModel = MessageViewModel(message: message)
         
         cell.layoutIfNeeded()
         
@@ -96,5 +108,15 @@ extension ChatViewController: UICollectionViewDelegateFlowLayout {
         let estimeSize = cell.systemLayoutSizeFitting(targetSize)
         
         return .init(width: view.frame.width, height: estimeSize.height)
+    }
+}
+
+extension ChatViewController: CustomInputViewDelegate {
+    func inputView(_ view: CustomInputView, wantUploadMessage message: String) {
+        MessageServices.uploadMessage(message: message, currentUser: currentUser, otherUser: otherUser) { _ in
+            
+        }
+        view.clearTextView()
+        collectionView.reloadData()
     }
 }

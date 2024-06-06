@@ -10,6 +10,13 @@ import UIKit
 class UserTableViewCell: UITableViewCell {
     
     // MARK: - Properties
+    
+    var viewModel: UserViewModel? {
+        didSet {
+            configure()
+        }
+    }
+    
     private let profileImageView = CustomImageView(width: 48, height: 48, backgroundColor: .lightGray, cornerRadius: 24)
     
     private let username = CustomLabel(text: "Username", textFont: .boldSystemFont(ofSize: 17))
@@ -52,4 +59,11 @@ class UserTableViewCell: UITableViewCell {
     }
     
     // MARK: - Helpers
+    
+    private func configure() {
+        guard let viewModel = viewModel else { return }
+        self.fullname.text = viewModel.fullname
+        self.username.text = viewModel.username
+        self.profileImageView.sd_setImage(with: viewModel.profileImageView)
+    }
 }

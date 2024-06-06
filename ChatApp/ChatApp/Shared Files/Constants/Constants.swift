@@ -8,4 +8,4 @@
 import Firebase
 
 let collection_User = Firestore.firestore().collection("users")
-
+let collection_Message = Firestore.firestore().collection("messages")

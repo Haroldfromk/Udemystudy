@@ -15,6 +15,14 @@ class ConversationViewController: UIViewController {
     private let tableView = UITableView()
     private let reuseIdentifier = "ConversationTableViewCell"
     
+    private var conversations: [Message] = []{
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    private var conversationDictionary = [String: Message]()
+    
     // MARK: - Lifecycle
     init(user: User) {
         self.user = user
@@ -31,6 +39,7 @@ class ConversationViewController: UIViewController {
         
         configureUI()
         configureTableView()
+        fetchConversations()
     }
     
     // MARK: - Helpers
@@ -42,6 +51,7 @@ class ConversationViewController: UIViewController {
         tableView.register(ConversationTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         tableView.tableFooterView = UIView() // Empty space
     }
+
     
     private func configureUI() {
         view.backgroundColor = .white
@@ -57,6 +67,16 @@ class ConversationViewController: UIViewController {
         tableView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: view.rightAnchor, paddingLeft: 15, paddingRight: 15)
     }
     
+    private func fetchConversations() {
+        MessageServices.fetchRecentMessages { conversations in
+            conversations.forEach { conversation in
+                self.conversationDictionary[conversation.chatPartnerID] = conversation
+            }
+            
+            self.conversations = Array(self.conversationDictionary.values)
+        }
+    }
+    
     @objc func handleLogout() {
         do {
             try Auth.auth().signOut()
@@ -68,8 +88,14 @@ class ConversationViewController: UIViewController {
     
     @objc func handleNewChat() {
         let controller = NewChatViewController()
+        controller.delegate = self
         let nav = UINavigationController(rootViewController: controller)
         present(nav,animated: true)
+    }
+    
+    private func openChat(currentUser: User, otherUser: User) {
+        let controller = ChatViewController(currentUser: currentUser, otherUser: otherUser)
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
@@ -78,19 +104,37 @@ class ConversationViewController: UIViewController {
 extension ConversationViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return conversations.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! ConversationTableViewCell
         
+        let conversation = conversations[indexPath.row]
+        
+        cell.viewModel = MessageViewModel(message: conversation)
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = ChatViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        let conversation = conversations[indexPath.row]
+        
+        showLoader(true)
+        UserServices.fetchUser(uid: conversation.chatPartnerID) { [self] otherUser in
+            showLoader(false)
+            openChat(currentUser: user, otherUser: otherUser)
+        }
     }
     
+}
+
+// MARK: - NewChatViewcontrollerDelegate
+extension ConversationViewController: NewChatViewControllerDelegate {
+    func controller(_ vc: NewChatViewController, wantChatWithUser otherUser: User) {
+        vc.dismiss(animated: true)
+        print(otherUser)
+        openChat(currentUser: user, otherUser: otherUser)
+    }
 }
