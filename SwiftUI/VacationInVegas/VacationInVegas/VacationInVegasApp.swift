@@ -2,7 +2,7 @@
 //  VacationInVegasApp.swift
 //  VacationInVegas
 //
-//  Created by Dongik Song on 9/3/24.
+//  Created by Dongik Song on 7/19/24.
 //
 
 import SwiftUI

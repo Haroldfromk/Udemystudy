@@ -2,7 +2,7 @@
 //  Place.swift
 //  VacationInVegas
 //
-//  Created by Dongik Song on 9/9/24.
+//  Created by Dongik Song on 7/20/24.
 //
 
 import SwiftData
