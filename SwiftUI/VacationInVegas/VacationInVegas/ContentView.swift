@@ -18,6 +18,11 @@ struct ContentView: View {
             Tab("Trip History", systemImage: "chart.line.uptrend.xyaxis") {
                 TripsChart()
             }
+            
+            Tab("Chart", systemImage: "chart.pie") {
+                VegasChart()
+            }
+            
         }
         .preferredColorScheme(.dark)
     }

@@ -43,7 +43,7 @@ struct PlaceList: View {
                             .scaledToFit()
                             .clipShape(.rect(cornerRadius: 7))
                             .frame(width: 100, height: 100)
-                        
+                
                         Text(place.name)
                         
                         Spacer()
