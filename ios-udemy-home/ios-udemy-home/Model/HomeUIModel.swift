@@ -9,6 +9,8 @@ import Foundation
 
 struct HomeUIModel: Hashable {
     
+    let sectionModels: [SectionModel]
+    
     struct SectionModel: Hashable {
         let section: Section
         let body: [Item]
@@ -16,11 +18,11 @@ struct HomeUIModel: Hashable {
     
     enum Section:Hashable {
         case mainBanner(id: String)
-        case textheader(id: String)
+        case textHeader(id: String)
         case courseSwimlane(id: String)
         case udemyBusinessBanner(id: String)
         case categories(id: String)
-        case featuredCourses(id: String)
+        case featuredCourse(id: String)
     }
     
     enum Item: Hashable {

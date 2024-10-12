@@ -26,6 +26,10 @@ struct MainBannerView: View {
             }
             VStack(alignment: .leading, spacing: 4) {
                 Text(title)
+                    .font(.system(size: 24, weight: .bold))
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                Text(caption)
                     .font(.system(size: 12))
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)
