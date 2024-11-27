@@ -16,7 +16,7 @@ struct HomeUIModel: Hashable {
         let body: [Item]
     }
     
-    enum Section:Hashable {
+    enum Section: Hashable {
         case mainBanner(id: String)
         case textHeader(id: String)
         case courseSwimlane(id: String)
