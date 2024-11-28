@@ -11,8 +11,18 @@ class NewsSourceListViewModel: ObservableObject {
     
     @Published var newsSources: [NewsSourceViewModel] = []
     
-    func getSources() {
+    func getSources() async {
         
+        do {
+            let newsSources = try await Webservice().fetchSourcesAsync(url: Secret.Urls.sources)
+            DispatchQueue.main.async {
+                self.newsSources = newsSources.map(NewsSourceViewModel.init)
+            }
+        } catch {
+            print(error)
+        }
+        
+        /*
         Webservice().fetchSources(url: Secret.Urls.sources) { result in
             switch result {
                 case .success(let newsSources):
@@ -22,7 +32,7 @@ class NewsSourceListViewModel: ObservableObject {
                 case .failure(let error):
                     print(error)
             }
-        }
+        } */
         
     }
     

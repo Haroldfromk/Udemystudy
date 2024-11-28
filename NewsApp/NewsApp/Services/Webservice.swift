@@ -15,6 +15,19 @@ enum NetworkError: Error {
 
 class Webservice {
     
+    func fetchSourcesAsync(url: URL?) async throws -> [NewsSource] {
+            
+        guard let url = url else {
+            return []
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: url)
+        let newsSourceResponse = try? JSONDecoder().decode(NewsSourceResponse.self, from: data)
+        
+        return newsSourceResponse?.sources ?? []
+    }
+    
+    /*
     func fetchSources(url: URL?, completion: @escaping (Result<[NewsSource], NetworkError>) -> Void) {
         
         guard let url = url else {
@@ -34,7 +47,22 @@ class Webservice {
             
         }.resume()
         
+    } */
+    
+    func fetchNewsAsync(sourceId: String, url: URL?) async throws -> [NewsArticle] {
+        
+        try await withCheckedThrowingContinuation { continuation in
+            fetchNews(by: sourceId, url: url) { result in
+                switch result {
+                case .success(let newsArticle):
+                    continuation.resume(returning: newsArticle)
+                case .failure(let error):
+                    continuation.resume(throwing: error)
+                }
+            }
+        }
     }
+    
     
     func fetchNews(by sourceId: String, url: URL?, completion: @escaping (Result<[NewsArticle], NetworkError>) -> Void) {
         

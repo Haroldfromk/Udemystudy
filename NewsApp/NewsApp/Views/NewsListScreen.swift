@@ -15,15 +15,15 @@ struct NewsListScreen: View {
     var body: some View {
         
         NavigationView {
-        
-        List(newsArticleListViewModel.newsArticles, id: \.id) { newsArticle in
+            
+            List(newsArticleListViewModel.newsArticles, id: \.id) { newsArticle in
                 NewsArticleCell(newsArticle: newsArticle)
-        }
-        .listStyle(.plain)
-        .onAppear {
-            newsArticleListViewModel.getNewsBy(sourceId: newsSource.id)
-        }
-        .navigationTitle(newsSource.name)
+            }
+            .listStyle(.plain)
+            .task {
+                await newsArticleListViewModel.getNewsBy(sourceId: newsSource.id)
+            }
+            .navigationTitle(newsSource.name)
         }
     }
 }
