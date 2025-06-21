@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61998C242E01F98E00235B2B /* IconGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61998C232E01F98E00235B2B /* IconGrid.swift */; };
+		61998C262E02429B00235B2B /* CurrencyTip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61998C252E02429B00235B2B /* CurrencyTip.swift */; };
+		619B249B2E01C58C00BC84C1 /* SelectCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B249A2E01C58C00BC84C1 /* SelectCurrency.swift */; };
+		619B24A82E01D90900BC84C1 /* CurrencyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B24A72E01D90900BC84C1 /* CurrencyIcon.swift */; };
+		619B24AA2E01E84100BC84C1 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619B24A92E01E84100BC84C1 /* Currency.swift */; };
 		61A0A1932C8F745A006FF516 /* LOTRConverter17App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A0A1922C8F745A006FF516 /* LOTRConverter17App.swift */; };
 		61A0A1952C8F745A006FF516 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A0A1942C8F745A006FF516 /* ContentView.swift */; };
 		61A0A1972C8F745B006FF516 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61A0A1962C8F745B006FF516 /* Assets.xcassets */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61998C232E01F98E00235B2B /* IconGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconGrid.swift; sourceTree = "<group>"; };
+		61998C252E02429B00235B2B /* CurrencyTip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTip.swift; sourceTree = "<group>"; };
+		619B249A2E01C58C00BC84C1 /* SelectCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCurrency.swift; sourceTree = "<group>"; };
+		619B24A72E01D90900BC84C1 /* CurrencyIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyIcon.swift; sourceTree = "<group>"; };
+		619B24A92E01E84100BC84C1 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		61A0A18F2C8F745A006FF516 /* LOTRConverter17.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LOTRConverter17.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61A0A1922C8F745A006FF516 /* LOTRConverter17App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LOTRConverter17App.swift; sourceTree = "<group>"; };
 		61A0A1942C8F745A006FF516 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,8 +69,13 @@
 				61A0A1942C8F745A006FF516 /* ContentView.swift */,
 				61A0A1A02C902A41006FF516 /* ExchangeInfo.swift */,
 				61CF41B42C907BA700533FEF /* ExchangeRate.swift */,
+				619B249A2E01C58C00BC84C1 /* SelectCurrency.swift */,
+				61998C232E01F98E00235B2B /* IconGrid.swift */,
+				619B24A72E01D90900BC84C1 /* CurrencyIcon.swift */,
 				61A0A1962C8F745B006FF516 /* Assets.xcassets */,
 				61A0A1982C8F745B006FF516 /* Preview Content */,
+				619B24A92E01E84100BC84C1 /* Currency.swift */,
+				61998C252E02429B00235B2B /* CurrencyTip.swift */,
 			);
 			path = LOTRConverter17;
 			sourceTree = "<group>";
@@ -101,7 +116,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1640;
 				TargetAttributes = {
 					61A0A18E2C8F745A006FF516 = {
 						CreatedOnToolsVersion = 15.4;
@@ -145,7 +160,12 @@
 			files = (
 				61CF41B52C907BA700533FEF /* ExchangeRate.swift in Sources */,
 				61A0A1A12C902A41006FF516 /* ExchangeInfo.swift in Sources */,
+				619B24A82E01D90900BC84C1 /* CurrencyIcon.swift in Sources */,
+				619B249B2E01C58C00BC84C1 /* SelectCurrency.swift in Sources */,
 				61A0A1952C8F745A006FF516 /* ContentView.swift in Sources */,
+				61998C262E02429B00235B2B /* CurrencyTip.swift in Sources */,
+				619B24AA2E01E84100BC84C1 /* Currency.swift in Sources */,
+				61998C242E01F98E00235B2B /* IconGrid.swift in Sources */,
 				61A0A1932C8F745A006FF516 /* LOTRConverter17App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +208,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LA95MXQ3R5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -251,6 +272,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LA95MXQ3R5;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -280,14 +302,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LOTRConverter17/Preview Content\"";
-				DEVELOPMENT_TEAM = LA95MXQ3R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,14 +330,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LOTRConverter17/Preview Content\"";
-				DEVELOPMENT_TEAM = LA95MXQ3R5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
