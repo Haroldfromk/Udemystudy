@@ -9,25 +9,43 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
+    var randomPokemon: Pokemon {
+        var results: [Pokemon] = []
+        
+        do {
+            results = try PersistenceController.shared.container.viewContext.fetch(Pokemon.fetchRequest())
+        } catch {
+            print("Couldn't fetch: \(error)")
+        }
+        
+        return results.randomElement() ?? PersistenceController.previewPokemon
+    }
+    
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry.placeholder
     }
     
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry.placeholder
+        completion(entry)
     }
     
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entries: [SimpleEntry] = []
         
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry.placeholder
+        for offset in 0..<10 {
+            let date = currentDate.addingTimeInterval(Double(offset * 5))
+            let pokemon = randomPokemon
+            let entry = SimpleEntry(
+                date: date,
+                name: pokemon.name!,
+                types: pokemon.types!,
+                sprite: pokemon.spriteImage
+            )
             entries.append(entry)
         }
-        
+
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
