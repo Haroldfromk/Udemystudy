@@ -7,27 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		61FD19FF2E072E6C0069A3A8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FD19FE2E072E6C0069A3A8 /* WidgetKit.framework */; };
-		61FD1A012E072E6C0069A3A8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FD1A002E072E6C0069A3A8 /* SwiftUI.framework */; };
+		6123CA3B2E07BCA0004317AA /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6123CA3A2E07BCA0004317AA /* WidgetKit.framework */; };
+		6123CA3D2E07BCA0004317AA /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6123CA3C2E07BCA0004317AA /* SwiftUI.framework */; };
+		6123CA482E07BCA2004317AA /* DexWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 6123CA382E07BCA0004317AA /* DexWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		61FD1A0A2E072E6E0069A3A8 /* PBXContainerItemProxy */ = {
+		6123CA462E07BCA2004317AA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 616EA5BA2E04D290005453FE /* Project object */;
+			containerPortal = 6123C9FE2E07BC69004317AA /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 61FD19FB2E072E6C0069A3A8;
+			remoteGlobalIDString = 6123CA372E07BCA0004317AA;
 			remoteInfo = DexWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		61FD1A112E072E6E0069A3A8 /* Embed Foundation Extensions */ = {
+		6123CA4D2E07BCA2004317AA /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6123CA482E07BCA2004317AA /* DexWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -35,45 +37,43 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		6123C9472E077F58004317AA /* Dex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Dex.xcodeproj; sourceTree = SOURCE_ROOT; };
-		616EA5C22E04D290005453FE /* Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Dex.app; path = "/Users/dongik/Documents/Workspace/Udemy/SwiftUI/Dex/build/Debug-iphoneos/Dex.app"; sourceTree = "<absolute>"; };
-		61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = DexWidgetExtension.appex; path = "/Users/dongik/Documents/Workspace/Udemy/SwiftUI/Dex/build/Debug-iphoneos/DexWidgetExtension.appex"; sourceTree = "<absolute>"; };
-		61FD19FE2E072E6C0069A3A8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
-		61FD1A002E072E6C0069A3A8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		6123CA062E07BC69004317AA /* Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6123CA382E07BCA0004317AA /* DexWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DexWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6123CA3A2E07BCA0004317AA /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		6123CA3C2E07BCA0004317AA /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		61FD1A0D2E072E6E0069A3A8 /* Exceptions for "DexWidget" folder in "DexWidgetExtension" target */ = {
+		6123CA492E07BCA2004317AA /* Exceptions for "DexWidget" folder in "DexWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */;
+			target = 6123CA372E07BCA0004317AA /* DexWidgetExtension */;
 		};
-		61FD1A132E07305D0069A3A8 /* Exceptions for "Dex" folder in "DexWidgetExtension" target */ = {
+		6123CA5D2E07BD24004317AA /* Exceptions for "Dex" folder in "DexWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
-				Persistence.swift,
 				Pokemon.swift,
 			);
-			target = 61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */;
+			target = 6123CA372E07BCA0004317AA /* DexWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		616EA5C42E04D290005453FE /* Dex */ = {
+		6123CA082E07BC69004317AA /* Dex */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				61FD1A132E07305D0069A3A8 /* Exceptions for "Dex" folder in "DexWidgetExtension" target */,
+				6123CA5D2E07BD24004317AA /* Exceptions for "Dex" folder in "DexWidgetExtension" target */,
 			);
 			path = Dex;
 			sourceTree = "<group>";
 		};
-		61FD1A022E072E6C0069A3A8 /* DexWidget */ = {
+		6123CA3E2E07BCA0004317AA /* DexWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				61FD1A0D2E072E6E0069A3A8 /* Exceptions for "DexWidget" folder in "DexWidgetExtension" target */,
+				6123CA492E07BCA2004317AA /* Exceptions for "DexWidget" folder in "DexWidgetExtension" target */,
 			);
 			path = DexWidget;
 			sourceTree = "<group>";
@@ -81,45 +81,49 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		616EA5BF2E04D290005453FE /* Frameworks */ = {
+		6123CA032E07BC69004317AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61FD19F92E072E6C0069A3A8 /* Frameworks */ = {
+		6123CA352E07BCA0004317AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61FD1A012E072E6C0069A3A8 /* SwiftUI.framework in Frameworks */,
-				61FD19FF2E072E6C0069A3A8 /* WidgetKit.framework in Frameworks */,
+				6123CA3D2E07BCA0004317AA /* SwiftUI.framework in Frameworks */,
+				6123CA3B2E07BCA0004317AA /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6123C9752E07814E004317AA /* Products */ = {
-			isa = PBXGroup;
-			name = Products;
-			sourceTree = "<group>";
-		};
-		616EA5B92E04D290005453FE = {
+		6123C9FD2E07BC69004317AA = {
 			isa = PBXGroup;
 			children = (
-				6123C9472E077F58004317AA /* Dex.xcodeproj */,
-				616EA5C42E04D290005453FE /* Dex */,
-				61FD1A022E072E6C0069A3A8 /* DexWidget */,
-				61FD19FD2E072E6C0069A3A8 /* Frameworks */,
+				6123CA082E07BC69004317AA /* Dex */,
+				6123CA3E2E07BCA0004317AA /* DexWidget */,
+				6123CA392E07BCA0004317AA /* Frameworks */,
+				6123CA072E07BC69004317AA /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		61FD19FD2E072E6C0069A3A8 /* Frameworks */ = {
+		6123CA072E07BC69004317AA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				61FD19FE2E072E6C0069A3A8 /* WidgetKit.framework */,
-				61FD1A002E072E6C0069A3A8 /* SwiftUI.framework */,
+				6123CA062E07BC69004317AA /* Dex.app */,
+				6123CA382E07BCA0004317AA /* DexWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6123CA392E07BCA0004317AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6123CA3A2E07BCA0004317AA /* WidgetKit.framework */,
+				6123CA3C2E07BCA0004317AA /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -127,105 +131,99 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		616EA5C12E04D290005453FE /* Dex */ = {
+		6123CA052E07BC69004317AA /* Dex */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 616EA5D22E04D291005453FE /* Build configuration list for PBXNativeTarget "Dex" */;
+			buildConfigurationList = 6123CA112E07BC6A004317AA /* Build configuration list for PBXNativeTarget "Dex" */;
 			buildPhases = (
-				616EA5BE2E04D290005453FE /* Sources */,
-				616EA5BF2E04D290005453FE /* Frameworks */,
-				616EA5C02E04D290005453FE /* Resources */,
-				61FD1A112E072E6E0069A3A8 /* Embed Foundation Extensions */,
+				6123CA022E07BC69004317AA /* Sources */,
+				6123CA032E07BC69004317AA /* Frameworks */,
+				6123CA042E07BC69004317AA /* Resources */,
+				6123CA4D2E07BCA2004317AA /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				61FD1A0B2E072E6E0069A3A8 /* PBXTargetDependency */,
+				6123CA472E07BCA2004317AA /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				616EA5C42E04D290005453FE /* Dex */,
+				6123CA082E07BC69004317AA /* Dex */,
 			);
 			name = Dex;
 			packageProductDependencies = (
 			);
 			productName = Dex;
-			productReference = 616EA5C22E04D290005453FE /* Dex.app */;
+			productReference = 6123CA062E07BC69004317AA /* Dex.app */;
 			productType = "com.apple.product-type.application";
 		};
-		61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */ = {
+		6123CA372E07BCA0004317AA /* DexWidgetExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 61FD1A0E2E072E6E0069A3A8 /* Build configuration list for PBXNativeTarget "DexWidgetExtension" */;
+			buildConfigurationList = 6123CA4A2E07BCA2004317AA /* Build configuration list for PBXNativeTarget "DexWidgetExtension" */;
 			buildPhases = (
-				61FD19F82E072E6C0069A3A8 /* Sources */,
-				61FD19F92E072E6C0069A3A8 /* Frameworks */,
-				61FD19FA2E072E6C0069A3A8 /* Resources */,
+				6123CA342E07BCA0004317AA /* Sources */,
+				6123CA352E07BCA0004317AA /* Frameworks */,
+				6123CA362E07BCA0004317AA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				61FD1A022E072E6C0069A3A8 /* DexWidget */,
+				6123CA3E2E07BCA0004317AA /* DexWidget */,
 			);
 			name = DexWidgetExtension;
 			packageProductDependencies = (
 			);
 			productName = DexWidgetExtension;
-			productReference = 61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */;
+			productReference = 6123CA382E07BCA0004317AA /* DexWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		616EA5BA2E04D290005453FE /* Project object */ = {
+		6123C9FE2E07BC69004317AA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1640;
 				LastUpgradeCheck = 1640;
 				TargetAttributes = {
-					616EA5C12E04D290005453FE = {
+					6123CA052E07BC69004317AA = {
 						CreatedOnToolsVersion = 16.4;
 					};
-					61FD19FB2E072E6C0069A3A8 = {
+					6123CA372E07BCA0004317AA = {
 						CreatedOnToolsVersion = 16.4;
 					};
 				};
 			};
-			buildConfigurationList = 616EA5BD2E04D290005453FE /* Build configuration list for PBXProject "Dex" */;
+			buildConfigurationList = 6123CA012E07BC69004317AA /* Build configuration list for PBXProject "Dex" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 616EA5B92E04D290005453FE;
+			mainGroup = 6123C9FD2E07BC69004317AA;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 616EA5B92E04D290005453FE;
+			productRefGroup = 6123CA072E07BC69004317AA /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 6123C9752E07814E004317AA /* Products */;
-					ProjectRef = 6123C9472E077F58004317AA /* Dex.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
-				616EA5C12E04D290005453FE /* Dex */,
-				61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */,
+				6123CA052E07BC69004317AA /* Dex */,
+				6123CA372E07BCA0004317AA /* DexWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		616EA5C02E04D290005453FE /* Resources */ = {
+		6123CA042E07BC69004317AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61FD19FA2E072E6C0069A3A8 /* Resources */ = {
+		6123CA362E07BCA0004317AA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -235,14 +233,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		616EA5BE2E04D290005453FE /* Sources */ = {
+		6123CA022E07BC69004317AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61FD19F82E072E6C0069A3A8 /* Sources */ = {
+		6123CA342E07BCA0004317AA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -252,15 +250,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		61FD1A0B2E072E6E0069A3A8 /* PBXTargetDependency */ = {
+		6123CA472E07BCA2004317AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */;
-			targetProxy = 61FD1A0A2E072E6E0069A3A8 /* PBXContainerItemProxy */;
+			target = 6123CA372E07BCA0004317AA /* DexWidgetExtension */;
+			targetProxy = 6123CA462E07BCA2004317AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		616EA5D02E04D291005453FE /* Debug */ = {
+		6123CA0F2E07BC6A004317AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -324,7 +322,7 @@
 			};
 			name = Debug;
 		};
-		616EA5D12E04D291005453FE /* Release */ = {
+		6123CA102E07BC6A004317AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -381,7 +379,7 @@
 			};
 			name = Release;
 		};
-		616EA5D32E04D291005453FE /* Debug */ = {
+		6123CA122E07BC6A004317AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -395,9 +393,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,12 +403,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HaroldSong.Dex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		616EA5D42E04D291005453FE /* Release */ = {
+		6123CA132E07BC6A004317AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -425,9 +422,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -436,12 +432,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = HaroldSong.Dex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		61FD1A0F2E072E6E0069A3A8 /* Debug */ = {
+		6123CA4B2E07BCA2004317AA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -454,7 +450,6 @@
 				INFOPLIST_FILE = DexWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DexWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,7 +465,7 @@
 			};
 			name = Debug;
 		};
-		61FD1A102E072E6E0069A3A8 /* Release */ = {
+		6123CA4C2E07BCA2004317AA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -483,7 +478,6 @@
 				INFOPLIST_FILE = DexWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DexWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -502,34 +496,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		616EA5BD2E04D290005453FE /* Build configuration list for PBXProject "Dex" */ = {
+		6123CA012E07BC69004317AA /* Build configuration list for PBXProject "Dex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				616EA5D02E04D291005453FE /* Debug */,
-				616EA5D12E04D291005453FE /* Release */,
+				6123CA0F2E07BC6A004317AA /* Debug */,
+				6123CA102E07BC6A004317AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		616EA5D22E04D291005453FE /* Build configuration list for PBXNativeTarget "Dex" */ = {
+		6123CA112E07BC6A004317AA /* Build configuration list for PBXNativeTarget "Dex" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				616EA5D32E04D291005453FE /* Debug */,
-				616EA5D42E04D291005453FE /* Release */,
+				6123CA122E07BC6A004317AA /* Debug */,
+				6123CA132E07BC6A004317AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		61FD1A0E2E072E6E0069A3A8 /* Build configuration list for PBXNativeTarget "DexWidgetExtension" */ = {
+		6123CA4A2E07BCA2004317AA /* Build configuration list for PBXNativeTarget "DexWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				61FD1A0F2E072E6E0069A3A8 /* Debug */,
-				61FD1A102E072E6E0069A3A8 /* Release */,
+				6123CA4B2E07BCA2004317AA /* Debug */,
+				6123CA4C2E07BCA2004317AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 616EA5BA2E04D290005453FE /* Project object */;
+	rootObject = 6123C9FE2E07BC69004317AA /* Project object */;
 }
