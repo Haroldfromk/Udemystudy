@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		61FD19FF2E072E6C0069A3A8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FD19FE2E072E6C0069A3A8 /* WidgetKit.framework */; };
 		61FD1A012E072E6C0069A3A8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61FD1A002E072E6C0069A3A8 /* SwiftUI.framework */; };
-		61FD1A0C2E072E6E0069A3A8 /* DexWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +28,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				61FD1A0C2E072E6E0069A3A8 /* DexWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		6123C9472E077F58004317AA /* Dex.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Dex.xcodeproj; sourceTree = SOURCE_ROOT; };
-		616EA5C22E04D290005453FE /* Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dex.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DexWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		616EA5C22E04D290005453FE /* Dex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Dex.app; path = "/Users/dongik/Documents/Workspace/Udemy/SwiftUI/Dex/build/Debug-iphoneos/Dex.app"; sourceTree = "<absolute>"; };
+		61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = DexWidgetExtension.appex; path = "/Users/dongik/Documents/Workspace/Udemy/SwiftUI/Dex/build/Debug-iphoneos/DexWidgetExtension.appex"; sourceTree = "<absolute>"; };
 		61FD19FE2E072E6C0069A3A8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		61FD1A002E072E6C0069A3A8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -114,17 +112,7 @@
 				616EA5C42E04D290005453FE /* Dex */,
 				61FD1A022E072E6C0069A3A8 /* DexWidget */,
 				61FD19FD2E072E6C0069A3A8 /* Frameworks */,
-				616EA5C32E04D290005453FE /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		616EA5C32E04D290005453FE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				616EA5C22E04D290005453FE /* Dex.app */,
-				61FD19FC2E072E6C0069A3A8 /* DexWidgetExtension.appex */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		61FD19FD2E072E6C0069A3A8 /* Frameworks */ = {
@@ -213,7 +201,7 @@
 			mainGroup = 616EA5B92E04D290005453FE;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 616EA5C32E04D290005453FE /* Products */;
+			productRefGroup = 616EA5B92E04D290005453FE;
 			projectDirPath = "";
 			projectReferences = (
 				{
