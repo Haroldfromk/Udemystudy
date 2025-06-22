@@ -56,9 +56,8 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Assets.xcassets,
-				Dex.xcdatamodeld,
 				Persistence.swift,
-				PokemonExt.swift,
+				Pokemon.swift,
 			);
 			target = 61FD19FB2E072E6C0069A3A8 /* DexWidgetExtension */;
 		};
@@ -103,6 +102,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6123C9752E07814E004317AA /* Products */ = {
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
 		616EA5B92E04D290005453FE = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +215,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 616EA5C32E04D290005453FE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6123C9752E07814E004317AA /* Products */;
+					ProjectRef = 6123C9472E077F58004317AA /* Dex.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				616EA5C12E04D290005453FE /* Dex */,
