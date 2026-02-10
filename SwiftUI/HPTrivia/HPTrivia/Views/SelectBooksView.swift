@@ -13,6 +13,8 @@ struct SelectBooksView: View {
     
     @State private var showTempAlert = false
     
+    private var store = Store()
+    
     var activeBooks: Bool {
         for book in game.bookQuestions.books {
             if book.status == .active {
@@ -39,12 +41,14 @@ struct SelectBooksView: View {
                 ScrollView {
                     LazyVGrid(columns: [GridItem(), GridItem()]) {
                         ForEach(game.bookQuestions.books) { book in
-                            if book.status == .active {
+                            if book.status == .active || (book.status == .locked && store.purchased.contains(book.image)) {
                                 ActiveBookView(book: book)
+                                    .task {
+                                        game.bookQuestions.changeStatus(of: book.id, to: .active)
+                                    }
                                     .onTapGesture {
                                         game.bookQuestions.changeStatus(of: book.id, to: .inactive)
                                     }
-                                
                             } else if book.status == .inactive {
                                 InactiveBookViews(book: book)
                                     .onTapGesture {
@@ -53,9 +57,11 @@ struct SelectBooksView: View {
                             } else {
                                 LockedBookView(book: book)
                                     .onTapGesture {
-                                        showTempAlert.toggle()
+                                        let product = store.products[book.id-4]
                                         
-                                        game.bookQuestions.changeStatus(of: book.id, to: .active)
+                                        Task {
+                                            await store.purchase(product)
+                                        }
                                     }
                             }
                         }
@@ -68,6 +74,7 @@ struct SelectBooksView: View {
                 }
                 
                 Button("Done") {
+                    game.bookQuestions.saveStatus()
                     dismiss()
                 }
                 .font(.largeTitle)
@@ -79,9 +86,9 @@ struct SelectBooksView: View {
             }
             .foregroundStyle(.black)
         }
-        .interactiveDismissDisabled(!activeBooks)
-        .alert("You purchased a new question pack. Yay!", isPresented: $showTempAlert) {
-            
+        .interactiveDismissDisabled()
+        .task {
+            await store.loadProducts()
         }
     }
 }

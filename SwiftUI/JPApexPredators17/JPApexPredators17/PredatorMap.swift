@@ -11,11 +11,11 @@ import MapKit
 struct PredatorMap: View {
     let predators = Predators()
     
-    @State var positoin: MapCameraPosition
+    @State var position: MapCameraPosition
     @State var satellite = false
     
     var body: some View {
-        Map(position: $positoin) {
+        Map(position: $position) {
             ForEach(predators.apexPredators) { predator in
                 Annotation(predator.name, coordinate: predator.location) {
                     Image(predator.image)
@@ -43,12 +43,13 @@ struct PredatorMap: View {
             }
 
         }
+        .toolbarBackground(.automatic)
     }
 }
 
 #Preview {
     PredatorMap(
-        positoin: .camera(
+        position: .camera(
             MapCamera(
                 centerCoordinate: Predators().apexPredators[2].location,
                 distance: 1000,

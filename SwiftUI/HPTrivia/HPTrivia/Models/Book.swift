@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Book: Identifiable {
+struct Book: Codable, Identifiable {
     let id: Int
     let image: String
     let questions: [Question]
@@ -16,6 +16,6 @@ struct Book: Identifiable {
     
 }
 
-enum BookStatus {
+enum BookStatus: Codable {
     case active, inactive, locked
 }

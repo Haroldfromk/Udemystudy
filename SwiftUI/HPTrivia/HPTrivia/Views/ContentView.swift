@@ -12,6 +12,7 @@ struct ContentView: View {
     @State private var audioPlayer: AVAudioPlayer!
     @State private var animateViewsIn = false
     @State private var playGame = false
+    @Environment(\.scenePhase) var scenePhase
 
     var body: some View {
         GeometryReader { geo in
@@ -48,6 +49,14 @@ struct ContentView: View {
                     audioPlayer.setVolume(1, fadeDuration: 3)
                 }
         }
+        .onChange(of: scenePhase) { _, newValue in
+            if newValue == .background || newValue == .inactive {
+                            // 앱이 홈화면으로 나가거나 비활성화되면 음악 정지
+                            audioPlayer?.pause()
+            } else {
+                audioPlayer?.play()
+            }
+        }
 
     }
     
@@ -55,7 +64,7 @@ struct ContentView: View {
         let sound = Bundle.main.path(forResource: "magic-in-the-air", ofType: "mp3")
         audioPlayer = try! AVAudioPlayer(contentsOf: URL(filePath: sound!))
         audioPlayer.numberOfLoops = -1
-        //audioPlayer.play()
+        audioPlayer.play()
     }
     
 }

@@ -50,7 +50,7 @@ struct PredatorDetail: View {
                     // Current Location
                     NavigationLink {
                         PredatorMap(
-                            positoin: .camera(
+                            position: .camera(
                                 MapCamera(
                                     centerCoordinate: predator.location,
                                     distance: 1000,
